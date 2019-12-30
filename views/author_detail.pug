@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 #{title}: #{author.name}
+
+  p= author.date_of_birth + ' - ' +author.date_of_death
+
+  each book in author_books
+    dt 
+      a(href=book.url) #{book.title}
+    dd #{book.summary}
+
+  hr
+  p
+    a(href=author.url+'/delete') Delete author
